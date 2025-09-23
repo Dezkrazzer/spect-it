@@ -35,11 +35,11 @@ int main() {
     int total_detik;
     scanf("%d", &total_detik);
 
-    int jam = total_detik / 3600;
-    int menit = (total_detik % 3600) / 60;
-    int detik = total_detik % 60;
+    int jam_format = total_detik / 3600;
+    int menit_format = (total_detik % 3600) / 60;
+    int detik_format = total_detik % 60;
 
-    printf("%02d:%02d:%02d\n", jam, menit, detik);
+    printf("%02d:%02d:%02d\n", jam_format, menit_format, detik_format);
 
     return 0;
 }

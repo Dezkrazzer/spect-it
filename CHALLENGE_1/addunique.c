@@ -46,15 +46,15 @@ int main() {
     }
 
     int hasil = 0;
-    for(int i = 0; i < masukan_angka; i++){
+    for(int iterasi = 0; iterasi < masukan_angka; iterasi++){
         int hitung = 0;
-        for(int j = 0; j < masukan_angka; j++){
-            if(arr[i] == arr[j]){
+        for(int pembanding = 0; pembanding < masukan_angka; pembanding++){
+            if(arr[iterasi] == arr[pembanding]){
                 hitung++;
             }
         }
         if(hitung == 1){
-            hasil += arr[i];
+            hasil += arr[iterasi];
         }
     }
 

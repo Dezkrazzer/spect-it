@@ -41,8 +41,8 @@ int main() {
     scanf("%d", &masukan_angka);
 
     int arr[masukan_angka];
-    for(int i = 0; i < masukan_angka; i++){
-        scanf("%d", &arr[i]);
+    for(int iterasi = 0; iterasi < masukan_angka; iterasi++){
+        scanf("%d", &arr[iterasi]);
     }
 
     int hasil = 0;

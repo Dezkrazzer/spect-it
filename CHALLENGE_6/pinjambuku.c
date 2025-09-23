@@ -38,15 +38,22 @@
 #include <stdlib.h>
 
 int main() {
-    int hari_kembali, hari_batas, denda_per_hari;
-    scanf("%d %d %d", &hari_kembali, &hari_batas, &denda_per_hari);
+    int hari_kembali, hari_batas, denda_per_hari; // Inisialisasi variabel untuk menampung hari kembali, hari batas, dan denda per hari
+    scanf("%d %d %d", &hari_kembali, &hari_batas, &denda_per_hari); // User diminta untuk memasukkan hari kembali, hari batas, dan denda per hari
 
-    if(hari_kembali <= hari_batas){
-        printf("TEPAT WAKTU\n");
-    } else {
-        int total_denda_yang_diberikan = (hari_kembali - hari_batas) * denda_per_hari;
-        printf("%d\n", total_denda_yang_diberikan);
+    if(hari_kembali <= hari_batas){ // Jika hari_kembali kurang dari atau sama dengan hari_batas (artinya tepat waktu)
+        printf("TEPAT WAKTU\n"); // Maka tampilkan "TEPAT WAKTU"
+    } else { // Jika hari_kembali lebih besar dari hari_batas (artinya terlambat)
+        int total_denda_yang_diberikan = (hari_kembali - hari_batas) * denda_per_hari; // Maka hitung total denda yang diberikan
+        printf("%d\n", total_denda_yang_diberikan); // Print total denda yang harus dibayarkan
     }
+
+    /*
+        total_denda_yang_diberikan = (hari_kembali - hari_batas) * denda_per_hari
+        Keterangan: (hari_kembali - hari_batas) adalah jumlah hari keterlambatan
+        Keterangan: denda_per_hari adalah denda yang diberikan per hari keterlambatan
+        Keterangan: total_denda_yang_diberikan adalah total denda yang harus dibayarkan
+    */
 
     return 0;
 }

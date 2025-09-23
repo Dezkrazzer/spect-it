@@ -37,27 +37,27 @@
 #include <stdlib.h>
 
 int main() {
-    int masukan_angka;
-    scanf("%d", &masukan_angka);
+    int masukan_angka; // Ini inisialisasi variabel untuk menampung input angka
+    scanf("%d", &masukan_angka); // User diminta untuk memasukkan angka
 
-    int arr[masukan_angka];
-    for(int iterasi = 0; iterasi < masukan_angka; iterasi++){
-        scanf("%d", &arr[iterasi]);
+    int arr[masukan_angka]; // Ini berfungsi untuk menampung array masukan_angka
+    for(int iterasi = 0; iterasi < masukan_angka; iterasi++){ // Ini berfungsi untuk mengisi array ke semua index
+        scanf("%d", &arr[iterasi]); // User diminta untuk memasukkan angka ke dalam array
     }
 
-    int hasil = 0;
-    for(int iterasi = 0; iterasi < masukan_angka; iterasi++){
-        int hitung = 0;
-        for(int pembanding = 0; pembanding < masukan_angka; pembanding++){
-            if(arr[iterasi] == arr[pembanding]){
-                hitung++;
+    int hasil = 0; // Ini inisialisasi variabel untuk menampung hasil penjumlahan angka unik
+    for(int iterasi = 0; iterasi < masukan_angka; iterasi++){ // Ini adalah looping untuk mengecek setiap angka di dalam array
+        int hitung = 0; // Ini inisialisasi variabel untuk menampung jumlah kemunculan angka
+        for(int pembanding = 0; pembanding < masukan_angka; pembanding++){ // Ini adalah looping untuk membandingkan angka di dalam array
+            if(arr[iterasi] == arr[pembanding]){ // Ketika angka di index iterasi sama dengan angka di index pembanding
+                hitung++; // Maka variabel hitung akan bertambah 1
             }
         }
-        if(hitung == 1){
-            hasil += arr[iterasi];
+        if(hitung == 1){ // Ketika variabel hitung bernilai 1 (artinya angka tersebut hanya muncul sekali)
+            hasil += arr[iterasi]; // Maka variabel hasil akan ditambah dengan angka di index iterasi
         }
     }
 
-    printf("%d\n", hasil);
+    printf("%d\n", hasil); // Ini berfungsi untuk menampilkan hasil penjumlahan angka unik
     return 0;
 }

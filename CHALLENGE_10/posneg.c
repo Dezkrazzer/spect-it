@@ -55,28 +55,39 @@
 #include <stdlib.h>
 
 int main() {
-    int panjang_array, nilai_init;
-    scanf("%d %d", &panjang_array, &nilai_init);
+    int panjang_array, nilai_init; // Inisialisasi variabel untuk menampung panjang array dan nilai init
+    scanf("%d %d", &panjang_array, &nilai_init); // User diminta untuk memasukkan panjang array dan nilai init
 
-    int nilai_array[panjang_array];
-    for(int iterasi = 0; iterasi < panjang_array; iterasi++){
-        scanf("%d", &nilai_array[iterasi]);
+    int nilai_array[panjang_array]; // Inisialisasi array untuk menampung nilai-nilai
+    for(int iterasi = 0; iterasi < panjang_array; iterasi++){ // Jika iterasi kurang dari panjang array, maka lakukan proses berikut
+        scanf("%d", &nilai_array[iterasi]); // User diminta untuk memasukkan nilai-nilai ke dalam array
     }
 
-    int nilai_akumulatif = nilai_init;
-    int proses_penjumlahan = (nilai_init < 0) ? 1 : 0;
+    int nilai_akumulatif = nilai_init; // Inisialisasi variabel untuk menampung nilai akumulatif, diinisialisasi dengan nilai init
+    int proses_penjumlahan = (nilai_init < 0) ? 1 : 0; // Inisialisasi variabel untuk menampung proses penjumlahan, 
+    // jika nilai init negatif maka proses penjumlahan adalah 1 (true), jika tidak maka 0 (false)
 
-    for(int iterasi = 0; iterasi < panjang_array; iterasi++){
-        if(proses_penjumlahan){
-            nilai_akumulatif += nilai_array[iterasi];
-            proses_penjumlahan = 0;
-        } else {
-            nilai_akumulatif -= nilai_array[iterasi];
-            proses_penjumlahan = 1;
+    for(int iterasi = 0; iterasi < panjang_array; iterasi++){ // Jika iterasi kurang dari panjang array, maka lakukan proses looping berikut
+        if(proses_penjumlahan){ // Jika proses penjumlahan adalah true, maka lakukan proses penjumlahan
+            nilai_akumulatif += nilai_array[iterasi]; // Tambahkan nilai array ke nilai akumulatif
+            proses_penjumlahan = 0; // Set proses penjumlahan menjadi false
+        } else { // Jika proses penjumlahan adalah false, maka lakukan proses pengurangan
+            nilai_akumulatif -= nilai_array[iterasi]; // Kurangkan nilai array dari nilai akumulatif
+            proses_penjumlahan = 1; // Set proses penjumlahan menjadi true
         }
     }
 
-    printf("%d\n", nilai_akumulatif);
+    printf("%d\n", nilai_akumulatif);   // Print hasil nilai akumulatif
+
+    /*
+        Penjelasan:
+        1. nilai_akumulatif diinisialisasi dengan nilai init
+        2. proses_penjumlahan diinisialisasi dengan kondisi nilai init, jika negatif maka true (1), jika tidak maka false (0)
+        3. Looping dilakukan sebanyak panjang array
+        4. Jika proses_penjumlahan true, maka lakukan penjumlahan dan set proses_penjumlahan menjadi false
+        5. Jika proses_penjumlahan false, maka lakukan pengurangan dan set proses_penjumlahan menjadi true
+        6. Hasil akhir nilai_akumulatif adalah hasil dari proses akumulatif
+    */
 
     return 0;
 }

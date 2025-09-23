@@ -30,10 +30,10 @@
     1 2 3
 
     Sample Output 0:
-    0
+    -6
 
     Explanation 0:
-    -8 + 1 -2 + 9 = 0
+    -8 + 1 - 2 + 3 = -6
     ^
     init
 
